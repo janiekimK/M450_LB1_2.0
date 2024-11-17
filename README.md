@@ -1,5 +1,5 @@
 # Student-DataBase-Management-System
 
-Project - This is a DataBase Management System that collects and stores collected data on students such as their name, address, and other pieces of information that is needed to be stored.
+Projekt - Es handelt sich um ein Datenbankmanagementsystem, das Daten über SchülerInnen sammelt und speichert, wie z.B. ihren Namen, ihre Adresse und andere Informationen, die gespeichert werden müssen.
 
-Besides being able to work with and have a better understanding of SQL, this project also allows the conjuction of working with Python and Database Management. 
+Neben der Möglichkeit, mit SQL zu arbeiten und es besser zu verstehen, ermöglicht dieses Projekt auch die Verbindung der Arbeit mit Python und Datenbankmanagement.
