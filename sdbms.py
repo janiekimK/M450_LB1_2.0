@@ -231,143 +231,95 @@ class AddStudent(QDialog):
     def __init__(self):
         super().__init__()
 
-        self.dept=-1
-        self.year=-1
-        self.sid=-1
-        self.sname=""
-        self.course_a=-1
-        self.course_b=-1
-        self.course_c=-1
+        self.dept = -1
+        self.year = -1
+        self.sid = -1
+        self.sname = ""
+        self.course_a = -1
+        self.course_b = -1
+        self.course_c = -1
 
-        self.btnCancel=QPushButton("Cancel",self)
-        self.btnReset=QPushButton("Reset",self)
-        self.btnAdd=QPushButton("Add",self)
+        self.btnCancel = QPushButton("Cancel", self)
+        self.btnReset = QPushButton("Reset", self)
+        self.btnAdd = QPushButton("Add", self)
 
         self.btnCancel.setFixedHeight(30)
         self.btnReset.setFixedHeight(30)
         self.btnAdd.setFixedHeight(30)
 
-        self.yearCombo=QComboBox(self)
-        self.yearCombo.addItem("1st")
-        self.yearCombo.addItem("2nd")
-        self.yearCombo.addItem("3rd")
-        self.yearCombo.addItem("4th")      
+        self.yearCombo = QComboBox(self)
+        self.yearCombo.addItems(["1st", "2nd", "3rd", "4th"])
 
         self.branchCombo = QComboBox(self)
-        self.branchCombo.addItem("Mechanical")
-        self.branchCombo.addItem("Chemical")
-        self.branchCombo.addItem("Software")
-        self.branchCombo.addItem("Biotech")
-        self.branchCombo.addItem("Computer Science")
-        self.branchCombo.addItem("Information Technology")
+        self.branchCombo.addItems(["Mechanical", "Chemical", "Software", "Biotech", "Computer Science", "Information Technology"])
 
         self.cACombo = QComboBox(self)
-        self.cACombo.addItem("DBMS")
-        self.cACombo.addItem("OS")
-        self.cACombo.addItem("CN")
-        self.cACombo.addItem("C++")
-        self.cACombo.addItem("JAVA")
-        self.cACombo.addItem("PYTHON")
-        self.cACombo.addItem("THERMO")
-        self.cACombo.addItem("MACHINE")
-        self.cACombo.addItem("CELLS")
-        self.cACombo.addItem("DS")
-        self.cACombo.addItem("CRE")
-        self.cACombo.addItem("MICROBES")
-        self.cACombo.addItem("FERTILIZER")
-        self.cACombo.addItem("PLANTS")
+        self.cACombo.addItems(["DBMS", "OS", "CN", "C++", "JAVA", "PYTHON", "THERMO", "MACHINE", "CELLS", "DS", "CRE", "MICROBES", "FERTILIZER", "PLANTS"])
 
         self.cBCombo = QComboBox(self)
-        self.cBCombo.addItem("DBMS")
-        self.cBCombo.addItem("OS")
-        self.cBCombo.addItem("CN")
-        self.cBCombo.addItem("C++")
-        self.cBCombo.addItem("JAVA")
-        self.cBCombo.addItem("PYTHON")
-        self.cBCombo.addItem("THERMO")
-        self.cBCombo.addItem("MACHINE")
-        self.cBCombo.addItem("CELLS")
-        self.cBCombo.addItem("DS")
-        self.cBCombo.addItem("CRE")
-        self.cBCombo.addItem("MICROBES")
-        self.cBCombo.addItem("FERTILIZER")
-        self.cBCombo.addItem("PLANTS")
+        self.cBCombo.addItems(["DBMS", "OS", "CN", "C++", "JAVA", "PYTHON", "THERMO", "MACHINE", "CELLS", "DS", "CRE", "MICROBES", "FERTILIZER", "PLANTS"])
 
         self.cCCombo = QComboBox(self)
-        self.cCCombo.addItem("DBMS")
-        self.cCCombo.addItem("OS")
-        self.cCCombo.addItem("CN")
-        self.cCCombo.addItem("C++")
-        self.cCCombo.addItem("JAVA")
-        self.cCCombo.addItem("PYTHON")
-        self.cCCombo.addItem("THERMO")
-        self.cCCombo.addItem("MACHINE")
-        self.cCCombo.addItem("CELLS")
-        self.cCCombo.addItem("DS")
-        self.cCCombo.addItem("CRE")
-        self.cCCombo.addItem("MICROBES")
-        self.cCCombo.addItem("FERTILIZER")
-        self.cCCombo.addItem("PLANTS")
-        self.cCCombo.addItem("MOBILE APP")
+        self.cCCombo.addItems(["DBMS", "OS", "CN", "C++", "JAVA", "PYTHON", "THERMO", "MACHINE", "CELLS", "DS", "CRE", "MICROBES", "FERTILIZER", "PLANTS", "MOBILE APP"])
 
-        self.rollLabel=QLabel("Roll No")
-        self.nameLabel=QLabel("Name")
+        self.rollLabel = QLabel("Roll No")
+        self.nameLabel = QLabel("Name")
         self.cALabel = QLabel("Slot A")
         self.yearLabel = QLabel("Current Year")
         self.cBLabel = QLabel("Slot B")
         self.branchLabel = QLabel("Branch")
-        self.cCLabel=QLabel("Slot C")
-   
-        self.rollText=QLineEdit(self)
-        self.nameText=QLineEdit(self)
+        self.cCLabel = QLabel("Slot C")
 
-        self.grid=QGridLayout(self)
-        self.grid.addWidget(self.rollLabel,1,1)
-        self.grid.addWidget(self.nameLabel,2,1)
+        self.rollText = QLineEdit(self)
+        self.nameText = QLineEdit(self)
+
+        self.grid = QGridLayout(self)
+        self.grid.addWidget(self.rollLabel, 1, 1)
+        self.grid.addWidget(self.nameLabel, 2, 1)
         self.grid.addWidget(self.yearLabel, 3, 1)
         self.grid.addWidget(self.branchLabel, 4, 1)
         self.grid.addWidget(self.cALabel, 5, 1)
         self.grid.addWidget(self.cBLabel, 6, 1)
-        self.grid.addWidget(self.cCLabel,7,1)
-        
-        self.grid.addWidget(self.rollText,1,2)
-        self.grid.addWidget(self.nameText,2,2)
+        self.grid.addWidget(self.cCLabel, 7, 1)
+
+        self.grid.addWidget(self.rollText, 1, 2)
+        self.grid.addWidget(self.nameText, 2, 2)
         self.grid.addWidget(self.yearCombo, 3, 2)
         self.grid.addWidget(self.branchCombo, 4, 2)
         self.grid.addWidget(self.cACombo, 5, 2)
         self.grid.addWidget(self.cBCombo, 6, 2)
-        self.grid.addWidget(self.cCCombo,7,2)
-       
-        self.grid.addWidget(self.btnReset,9,1)
-        self.grid.addWidget(self.btnCancel,9,3)
-        self.grid.addWidget(self.btnAdd,9,2)
+        self.grid.addWidget(self.cCCombo, 7, 2)
+
+        self.grid.addWidget(self.btnReset, 9, 1)
+        self.grid.addWidget(self.btnCancel, 9, 3)
+        self.grid.addWidget(self.btnAdd, 9, 2)
 
         self.btnAdd.clicked.connect(self.addStudent)
         self.btnCancel.clicked.connect(self.Close)
         self.btnReset.clicked.connect(self.reset)
-        
+
         self.setLayout(self.grid)
         self.setWindowTitle("Add Student Details")
-        self.resize(500,300)
+        self.resize(500, 300)
 
     def Close(self):
-    	self.close()
+        self.close()
 
-def reset(self):
+    def reset(self):
         self.rollText.setText("")
         self.nameText.setText("")
-        
-def addStudent(self):
-        self.year=self.yearCombo.currentIndex()
-        self.dept=self.branchCombo.currentIndex()
-        self.sid=int(self.rollText.text())
-        self.sname=self.nameText.text()
-        self.course_a=self.cACombo.currentIndex()
-        self.course_b=self.cBCombo.currentIndex()
-        self.course_c=self.cCCombo.currentIndex()
 
-        self.dbhelper=DBHelper()
-        self.dbhelper.addStudent(self.sid,self.sname,self.dept ,self.year ,self.course_a ,self.course_b ,self.course_c )
+    def addStudent(self):
+        self.year = self.yearCombo.currentIndex()
+        self.dept = self.branchCombo.currentIndex()
+        self.sid = int(self.rollText.text())
+        self.sname = self.nameText.text()
+        self.course_a = self.cACombo.currentIndex()
+        self.course_b = self.cBCombo.currentIndex()
+        self.course_c = self.cCCombo.currentIndex()
+
+        self.dbhelper = DBHelper()
+        self.dbhelper.addStudent(self.sid, self.sname, self.dept, self.year, self.course_a, self.course_b, self.course_c)
 
 
 class Window(QMainWindow):
@@ -480,13 +432,10 @@ if __name__ == '__main__':
     sys.exit(app.exec_())      
 
 
-def evaluateStudentGrades(score):
-    """
-    Function to evaluate grades based on scores.
+"""Test Driven Development:"""
 
-    :param score: Integer score between 0 and 100
-    :return: String grade (6, 5, 4, 3, 2)
-    """
+def evaluateStudentGrades(score):
+ 
     if not isinstance(score, (int, float)):
         raise TypeError("Score must be a number")
     if score < 0 or score > 100:
