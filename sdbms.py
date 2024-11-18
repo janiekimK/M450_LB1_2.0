@@ -456,14 +456,14 @@ class Window(QMainWindow):
         self.dialogDelete.exec()
     
     def showStudent(self):
-        if self.editField.text() is "":
+        if self.editField.text() == "":
             QMessageBox.warning(QMessageBox(), 'Error','You must give the roll number to show the results for.')
             return None
         showstudent = DBHelper()
         showstudent.searchStudent(int(self.editField.text()))
 
     def deleteRecord(self):
-        if self.editField.text() is "":
+        if self.editField.text() == "":
             QMessageBox.warning(QMessageBox(), 'Error','You must give the roll number to show the results for.')
             return None
         delrecord = DBHelper()
@@ -480,4 +480,25 @@ if __name__ == '__main__':
     sys.exit(app.exec_())      
 
 
+def evaluateStudentGrades(score):
+    """
+    Function to evaluate grades based on scores.
 
+    :param score: Integer score between 0 and 100
+    :return: String grade (6, 5, 4, 3, 2)
+    """
+    if not isinstance(score, (int, float)):
+        raise TypeError("Score must be a number")
+    if score < 0 or score > 100:
+        raise ValueError("Score must be between 0 and 100")
+
+    if score >= 90:
+        return "6"
+    elif score >= 80:
+        return "5"
+    elif score >= 70:
+        return "4"
+    elif score >= 60:
+        return "3"
+    else:
+        return "2"
