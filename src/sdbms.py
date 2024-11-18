@@ -353,11 +353,11 @@ class AddStudent(QDialog):
     def Close(self):
     	self.close()
 
-    def reset(self):
+def reset(self):
         self.rollText.setText("")
         self.nameText.setText("")
         
-    def addStudent(self):
+def addStudent(self):
         self.year=self.yearCombo.currentIndex()
         self.dept=self.branchCombo.currentIndex()
         self.sid=int(self.rollText.text())
