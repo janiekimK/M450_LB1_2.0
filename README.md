@@ -7,7 +7,7 @@ Neben der Möglichkeit, mit SQL zu arbeiten und es besser zu verstehen, ermögli
 # To run:
 
 ..go to directory:
-cd OneDrive\Desktop\Schule\Module\M_450\Student-Data-Base-ManagementSystem-main
+cd to path
 
 ..to run program:
 python main.py
